@@ -1,3 +1,5 @@
+export PATH="/opt/homebrew/bin:$PATH"
+
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
@@ -115,4 +117,4 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
 # Created by `pipx` on 2025-02-17 21:28:04
 export PATH="$PATH:/Users/ahmedelamin/.local/bin"
-export PATH="$(npm bin -g):$PATH"
+eval "$(direnv hook zsh)"

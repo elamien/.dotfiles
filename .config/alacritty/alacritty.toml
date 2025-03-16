@@ -2,5 +2,5 @@
 size = 16.7
 
 [colors.primary]
-background = '#000000'
-foreground = '#ffffff'
+background = '#ffffff'
+foreground = '#000000'
