@@ -76,6 +76,17 @@ return {
             },
         })
 
+        -- Manual config for djlsp since mason-lspconfig doesn't support it.
+        require("lspconfig").djlsp.setup({
+            cmd = { "djlsp" },
+            capabilities = capabilities,
+            -- init_options = {
+            --     django_settings_module = "<your.settings.module>",
+            --     docker_compose_file = "docker_compose.yml",
+            --     docker_compose_service = "django",
+            -- }
+        })
+
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
