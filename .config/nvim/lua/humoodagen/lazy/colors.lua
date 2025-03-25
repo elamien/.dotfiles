@@ -1,33 +1,35 @@
 -- Define a helper to adjust background highlights (optional)
 local function ColorMyPencils()
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
 end
 
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "rose-pine/neovim",
+    name = "rose-pine",
     lazy = false,         -- Ensure the plugin loads immediately
     priority = 1000,      -- Load early to ensure proper colorscheme setup
     opts = {
-      flavour = "latte",         -- Use the "latte" flavour
-      background = {
-        light = "latte",         -- light background for light mode
-        dark = "mocha",          -- dark background for dark mode (optional)
+      variant = "main",         -- Use the "main" variant
+      dark_variant = "moon",    -- Use "moon" for dark mode
+      disable_background = false, -- Set to false if you want a solid background
+      enable = {
+        terminal = true,         -- Enable terminal colors
       },
-      transparent_background = false, -- Set to false if you want a solid background
-      term_colors = true,
+      highlight_groups = {
+        Normal = { bg = "#000000" },
+        NormalFloat = { bg = "#000000" },
+      },
       -- You can add further customization here if needed
     },
     config = function(_, opts)
       -- Set up the theme before applying the colorscheme
-      require("catppuccin").setup(opts)
+      require("rose-pine").setup(opts)
       -- Load the colorscheme explicitly
-      vim.cmd("colorscheme catppuccin")
+      vim.cmd("colorscheme rose-pine")
       -- Optionally adjust highlights after setting the colorscheme
       ColorMyPencils()
     end,
   },
 }
-

@@ -40,6 +40,7 @@ return {
                 "html",
                 "cssmodules_ls",
                 "sqls",
+                "tailwindcss",
             },
             handlers = {
                 function(server_name)

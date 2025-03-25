@@ -29,3 +29,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+-- Enable parentheses matching highlight
+vim.g.loaded_matchparen = 1
